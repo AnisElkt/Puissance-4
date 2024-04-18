@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puissance 4</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<style>
+    body {
+        background-color: grey;
+    }
+
+    #game table {
+        border: 3px blue outset;
+        background-color: blue;
+        position: relative;
+        left: 35vh;
+        top: 10vh;
+        border-radius: 5vh;
+        padding: 1vh;
+    }
+
+    #game td {
+        width: 2cm;
+        height: 2cm;
+        margin: 0px;
+        padding: 0px;
+        border: 2px blue inset;
+        border-radius: 2cm;
+        background-color: white;
+        cursor: pointer;
+    }
+
+
+    #game td.player1 {
+        background-color: red;
+    }
+
+    .jeton {
+    transition: transform 0.5s ease-in;
+    transform: translateY(-100vh); /* Démarre en dehors de l'écran */
+}
+
+    #game td.player2 {
+        background-color: yellow;
+    }
+
+    @keyframes blink {
+
+        0%,
+        100% {
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px yellow, 0 0 30px blue, 0 0 40px #ff00ff, 0 0 50px blue, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+        }
+
+        50% {
+            color: #000000;
+            text-shadow: none;
+        }
+    }
+
+    #titrep4 {
+        animation: blink 2s infinite;
+        text-align: center;
+    }
+
+    
+    @keyframes dropAnimation {
+  from {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pion {
+  animation: dropAnimation 0.5s ease-out;
+}
+
+</style>
+<body>
+
+    <div id="game">
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>
